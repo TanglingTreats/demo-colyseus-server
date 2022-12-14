@@ -9,7 +9,7 @@
     "loadtest": "colyseus-loadtest loadtest/example.ts --room my_room --numClients 2",
     "build-dev": "npm run clean-dev && tsc -p tsconfig.dev.json && node node_modules/copyfiles/copyfiles package.json ./lib/dev && node node_modules/copyfiles/copyfiles arena.env ./lib/dev",
     "clean-dev": "node node_modules/rimraf/bin lib/dev",
-    "build": "npm run clean && tsc && node node_modules/copyfiles/copyfiles package.json ./lib/prod && node node_modules/copyfiles/copyfiles arena.env ./lib/prod",
+    "build": "npm run clean && tsc -p tsconfig.prod.json && node node_modules/copyfiles/copyfiles package.json ./lib/prod && node node_modules/copyfiles/copyfiles arena.env ./lib/prod",
     "clean": "node node_modules/rimraf/bin lib/prod",
     "test": "mocha --require ts-node/register test/**_test.ts --exit --timeout 15000"
   },
