@@ -11,6 +11,17 @@ export class MyRoom extends Room<MyRoomState> {
       player.x = data.x;
       player.y = data.y;
       player.z = data.z;
+      player.rotX = data.rotX;
+      player.rotY = data.rotY;
+      player.rotZ = data.rotZ;
+      player.rotW = data.rotW;
+    });
+
+    this.onMessage("updateRotation", (client, data) => {
+      const player = this.state.players.get(client.sessionId);
+      player.rotX = data.x;
+      player.rotY = data.y;
+      player.rotZ = data.z;
     });
 
   }
