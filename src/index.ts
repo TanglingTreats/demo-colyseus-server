@@ -26,7 +26,6 @@ import express from "express";
 dotenv.config();
 
 const port = Number(process.env.PORT) || 2567;
-console.log(process.env);
 
 // Create and listen on 2567 (or PORT environment variable.)
 const app = express();
