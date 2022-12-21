@@ -9,6 +9,8 @@ export class Player extends Schema {
   @type("number") rotY: number;
   @type("number") rotZ: number;
   @type("number") rotW: number;
+  @type("number") animX: number;
+  @type("number") animZ: number;
 }
 
 export class MyRoomState extends Schema {
