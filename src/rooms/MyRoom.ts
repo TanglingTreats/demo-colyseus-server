@@ -7,12 +7,13 @@ export class MyRoom extends Room<MyRoomState> {
     this.setState(new MyRoomState());
 
     this.onMessage("setPlayerName", (client, data) => {
+      console.log("setting player name");
       const player = this.state.players.get(client.sessionId);
 
       player.name = data.name;
     })
 
-    this.onMessage("updatePosition", (client, data) => {
+    this.onMessage("updateMovement", (client, data) => {
       const player = this.state.players.get(client.sessionId);
       player.x = data.x;
       player.y = data.y;
@@ -22,6 +23,14 @@ export class MyRoom extends Room<MyRoomState> {
       player.rotZ = data.rotZ;
       player.rotW = data.rotW;
     });
+
+    this.onMessage("updatePosition", (client, data) => {
+      const player = this.state.players.get(client.sessionId);
+
+      player.x = data.x;
+      player.y = data.y;
+      player.z = data.z;
+    })
 
     this.onMessage("updateAnimState", (client, data) => {
       const player = this.state.players.get(client.sessionId);

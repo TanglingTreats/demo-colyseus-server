@@ -25,9 +25,9 @@ import express from "express";
 
 dotenv.config();
 
-const port = Number(process.env.PORT) || 2567;
+const port = Number(process.env.PORT) || 2568;
 
-// Create and listen on 2567 (or PORT environment variable.)
+// Create and listen on 2568 (or PORT environment variable.)
 const app = express();
 app.use(express.json());
 
